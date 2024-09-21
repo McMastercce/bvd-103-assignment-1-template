@@ -22,8 +22,12 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"humao.rest-client",
 				"rangav.vscode-thunder-client"
-			]
+			],
+            "settings": {
+                "rest-client.previewResponseInUntitledDocument": true
+            }
 		}
 	},
 
