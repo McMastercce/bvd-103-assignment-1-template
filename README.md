@@ -1,2 +1,11 @@
 # bvd-103-assignment-1-template
-This is a template repository for the first assignment in BVD 103 at McMaster Continuing Education.
+
+## Install node packages
+```
+npm install
+```
+
+## Run sample server
+```
+npm run start--server
+```
