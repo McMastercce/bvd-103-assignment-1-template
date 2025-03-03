@@ -22,8 +22,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"mongodb.mongodb-vscode",
 				"humao.rest-client",
-				"rangav.vscode-thunder-client"
 			],
             "settings": {
                 "rest-client.previewResponseInUntitledDocument": true

@@ -1,16 +1,24 @@
-import Koa from 'koa';
-import bodyParser from 'koa-bodyparser';
-import qs from 'koa-qs';
-import routes from './routes';
+import Koa from "koa";
+import cors from "@koa/cors";
+import zodRouter from 'koa-zod-router';
+import qs from "koa-qs";
+import books_list from "./books/list";
 
 const app = new Koa();
+
+// We use koa-qs to enable parsing complex query strings, like our filters.
 qs(app);
 
-app.use(bodyParser());
-app.use(routes.allowedMethods());
-app.use(routes.routes());
+// And we add cors to ensure we can access our API from the mcmasterful-books website
+app.use(cors())
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+const router = zodRouter();
+
+// Setup Book List Route
+books_list(router);
+
+app.use(router.routes());
+
+app.listen(3000, () => {
+    console.log("listening!")
 });

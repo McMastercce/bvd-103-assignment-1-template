@@ -5,7 +5,13 @@
 npm install
 ```
 
-## Run sample server
+## Start backend server
 ```
-npm run start--server
+npm run start-server
+```
+
+## Start Frontend UI 
+Open a new shell and run command 
+```
+mcmasterful-books
 ```
