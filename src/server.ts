@@ -1,14 +1,16 @@
 import Koa from 'koa';
+import cors from '@koa/cors';
 import bodyParser from 'koa-bodyparser';
 import qs from 'koa-qs';
-import routes from './routes';
+import bookRoutes from './books/book_routes';
 
 const app = new Koa();
 qs(app);
 
+app.use(cors());
 app.use(bodyParser());
-app.use(routes.allowedMethods());
-app.use(routes.routes());
+app.use(bookRoutes.allowedMethods());
+app.use(bookRoutes.routes());
 
 const PORT = 3000;
 app.listen(PORT, () => {
