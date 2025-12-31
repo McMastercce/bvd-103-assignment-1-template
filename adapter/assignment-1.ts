@@ -23,27 +23,8 @@ async function listBooks(filters?: Array<{ from?: number, to?: number }>): Promi
 
   // Use the browser fetch API to make a request to the /books endpoint with the constructed query string.
   // fetch(`http://localhost:3000/books?${query}`);
-  // throw new Error("Todo")
 
-  const query = filters?.map(({ from, to }, index) => {
-    let result = ''
-    if (typeof from === 'number') {
-      result += `&filters[${index}][from]=${from}`
-    }
-    if (typeof to === 'number') {
-      result += `&filters[${index}][to]=${to}`
-    }
-    return result
-  }).join('&') ?? ''
-
-  // Use the fetch API to make a request to the /books endpoint with the constructed query string.
-  let result = await fetch(`http://localhost:3000/books?${query}`);
-  if (result.ok) {
-    // And if it is valid, we parse the JSON result and return it.
-    return await result.json() as Book[]
-  } else {
-    throw new Error('Failed to fetch books')
-  }
+  throw new Error("Todo: implement function listBooks")
 }
 
 const assignment = "assignment-1";

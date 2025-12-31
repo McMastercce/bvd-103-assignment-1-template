@@ -10,7 +10,7 @@ listRouter.get('/books', async (ctx) => {
   try {
     let bookList = readBooksFromJsonData();
 
-    // Uncomment to Apply filters
+    // Todo: Uncomment to Apply filters
     // if (filters && Array.isArray(filters) && filters.length > 0) {
     //   if (!validateFilters(filters)) {
     //     ctx.status = 400;
